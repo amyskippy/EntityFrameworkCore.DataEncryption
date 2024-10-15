@@ -39,8 +39,3 @@ jobs:
     - name: Copy coverage results
       run:  cp ./test/EntityFrameworkCore.DataEncryption.Test/TestResults/**/*.xml ./test/EntityFrameworkCore.DataEncryption.Test/TestResults/
 
-    - name: Upload code coverage
-      uses: codecov/codecov-action@v3
-      with:
-        files: ./test/EntityFrameworkCore.DataEncryption.Test/TestResults/coverage.opencover.xml
-        fail_ci_if_error: true
