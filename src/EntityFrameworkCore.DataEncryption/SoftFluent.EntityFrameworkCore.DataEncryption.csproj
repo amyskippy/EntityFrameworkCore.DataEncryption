@@ -4,23 +4,24 @@
 		<TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0</TargetFrameworks>
 		<LangVersion>10.0</LangVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<AssemblyName>EntityFrameworkCore.DataEncryption</AssemblyName>
-		<RootNamespace>Microsoft.EntityFrameworkCore.DataEncryption</RootNamespace>
+		<AssemblyName>SoftFluent.EntityFrameworkCore.DataEncryption</AssemblyName>
+		<RootNamespace>SoftFluent.EntityFrameworkCore.DataEncryption</RootNamespace>
 		<IsPackable>true</IsPackable>
-		<Version>5.0.0</Version>
+		<Version>6.0.0</Version>
 		<Authors>Filipe GOMES PEIXOTO</Authors>
+    <Company>SoftFluent</Company>
 		<PackageId>EntityFrameworkCore.DataEncryption</PackageId>
-		<PackageProjectUrl>https://github.com/Eastrall/EntityFrameworkCore.DataEncryption</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Eastrall/EntityFrameworkCore.DataEncryption.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageTags>entity-framework-core, extensions, dotnet-core, dotnet, encryption, fluent-api</PackageTags>
 		<PackageIcon>icon.png</PackageIcon>
-		<Copyright>Filipe GOMES PEIXOTO © 2019 - 2023</Copyright>
+		<Copyright>SoftFluent © 2019 - 2024</Copyright>
 		<Description>A plugin for Microsoft.EntityFrameworkCore to add support of encrypted fields using built-in or custom encryption providers.</Description>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageReleaseNotes>https://github.com/Eastrall/EntityFrameworkCore.DataEncryption/releases/tag/v5.0.0</PackageReleaseNotes>
+		<PackageReleaseNotes>https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/releases/tag/v6.0.0</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
@@ -58,7 +59,7 @@
 
 	<ItemGroup>
 		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-			<_Parameter1>Microsoft.EntityFrameworkCore.Encryption.Test</_Parameter1>
+			<_Parameter1>SoftFluent.EntityFrameworkCore.Encryption.Test</_Parameter1>
 		</AssemblyAttribute>
 	</ItemGroup>
 

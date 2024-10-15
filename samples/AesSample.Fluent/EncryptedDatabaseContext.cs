@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace AesSample.Fluent;
+namespace SoftFluent.AesSample.Fluent;
 
 public class EncryptedDatabaseContext : DatabaseContext
 {

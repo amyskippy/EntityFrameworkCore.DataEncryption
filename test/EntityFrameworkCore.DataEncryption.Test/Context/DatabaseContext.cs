@@ -1,4 +1,6 @@
-﻿namespace Microsoft.EntityFrameworkCore.DataEncryption.Test.Context;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace SoftFluent.EntityFrameworkCore.DataEncryption.Test.Context;
 
 public class DatabaseContext : DbContext
 {

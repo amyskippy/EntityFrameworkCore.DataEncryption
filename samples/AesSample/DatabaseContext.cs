@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.DataEncryption;
+using SoftFluent.EntityFrameworkCore.DataEncryption;
 
-namespace AesSample;
+namespace SoftFluent.AesSample;
 
 public class DatabaseContext : DbContext
 {

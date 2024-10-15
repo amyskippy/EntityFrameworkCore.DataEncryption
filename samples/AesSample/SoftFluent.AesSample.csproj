@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\EntityFrameworkCore.DataEncryption\EntityFrameworkCore.DataEncryption.csproj" />
+		<ProjectReference Include="..\..\src\EntityFrameworkCore.DataEncryption\SoftFluent.EntityFrameworkCore.DataEncryption.csproj" />
 	</ItemGroup>
 
 </Project>

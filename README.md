@@ -1,7 +1,6 @@
 # EntityFrameworkCore.DataEncryption
 
-[![.NET](https://github.com/Eastrall/EntityFrameworkCore.DataEncryption/actions/workflows/build.yml/badge.svg)](https://github.com/Eastrall/EntityFrameworkCore.DataEncryption/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/Eastrall/EntityFrameworkCore.DataEncryption/branch/main/graph/badge.svg)](https://codecov.io/gh/Eastrall/EntityFrameworkCore.DataEncryption)
+[![.NET](https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/actions/workflows/build.yml/badge.svg)](https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/actions/workflows/build.yml)
 [![Nuget](https://img.shields.io/nuget/v/EntityFrameworkCore.DataEncryption.svg)](https://www.nuget.org/packages/EntityFrameworkCore.DataEncryption)
 [![Nuget Downloads](https://img.shields.io/nuget/dt/EntityFrameworkCore.DataEncryption)](https://www.nuget.org/packages/EntityFrameworkCore.DataEncryption)
 
@@ -33,7 +32,7 @@ PM> Install-Package EntityFrameworkCore.DataEncryption
 
 | Name | Class | Extra |
 |------|-------|-------|
-| [AES](https://learn.microsoft.com/en-US/dotnet/api/system.security.cryptography.aes?view=net-6.0) | [AesProvider](https://github.com/Eastrall/EntityFrameworkCore.DataEncryption/blob/main/src/EntityFrameworkCore.DataEncryption/Providers/AesProvider.cs) | Can use a 128bits, 192bits or 256bits key |
+| [AES](https://learn.microsoft.com/en-US/dotnet/api/system.security.cryptography.aes?view=net-6.0) | [AesProvider](https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/blob/main/src/EntityFrameworkCore.DataEncryption/Providers/AesProvider.cs) | Can use a 128bits, 192bits or 256bits key |
 
 ## How to use
 
@@ -82,7 +81,7 @@ public class DatabaseContext : DbContext
 	}
 }
 ```
-The code bellow creates a new [`AesProvider`](https://github.com/Eastrall/EntityFrameworkCore.DataEncryption/blob/main/src/EntityFrameworkCore.DataEncryption/Providers/AesProvider.cs) and gives it to the current model. It will encrypt every `string` fields of your model that has the `[Encrypted]` attribute when saving changes to database. As for the decrypt process, it will be done when reading the `DbSet<T>` of your `DbContext`.
+The code bellow creates a new [`AesProvider`](https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/blob/main/src/EntityFrameworkCore.DataEncryption/Providers/AesProvider.cs) and gives it to the current model. It will encrypt every `string` fields of your model that has the `[Encrypted]` attribute when saving changes to database. As for the decrypt process, it will be done when reading the `DbSet<T>` of your `DbContext`.
 
 ### Example with `AesProvider` and fluent configuration
 
