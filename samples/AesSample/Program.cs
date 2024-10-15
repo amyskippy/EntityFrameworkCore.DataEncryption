@@ -1,10 +1,10 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Providers;
 using System;
 using System.Linq;
 
-namespace AesSample;
+namespace SoftFluent.AesSample;
 
 static class Program
 {

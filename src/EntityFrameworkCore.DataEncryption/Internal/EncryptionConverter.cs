@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
-using System.ComponentModel.DataAnnotations;
+using SoftFluent.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption.Internal;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption.Internal;
 
 /// <summary>
 /// Defines the internal encryption converter for string values.

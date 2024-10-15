@@ -1,13 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.DataEncryption;
-using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
-using Microsoft.EntityFrameworkCore.DataEncryption.Test.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Test.Context;
+using SoftFluent.EntityFrameworkCore.DataEncryption;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Providers;
 using System;
-using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Xunit;
+using SoftFluent.ComponentModel.DataAnnotations;
 
-namespace Microsoft.EntityFrameworkCore.Encryption.Test;
+namespace SoftFluent.EntityFrameworkCore.Encryption.Test;
 
 public class ModelBuilderExtensionsTest
 {

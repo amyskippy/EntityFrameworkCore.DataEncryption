@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AesSample.Fluent;
+namespace SoftFluent.AesSample.Fluent;
 
 public class UserEntity
 {

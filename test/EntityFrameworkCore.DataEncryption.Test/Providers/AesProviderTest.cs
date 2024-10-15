@@ -1,12 +1,13 @@
 ﻿using Bogus;
-using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
-using Microsoft.EntityFrameworkCore.DataEncryption.Test.Context;
+using Microsoft.EntityFrameworkCore;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Providers;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Test.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption.Test.Providers;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption.Test.Providers;
 
 public class AesProviderTest
 {

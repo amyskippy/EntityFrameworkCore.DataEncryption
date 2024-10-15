@@ -1,4 +1,4 @@
-﻿namespace Microsoft.EntityFrameworkCore.DataEncryption;
+﻿namespace SoftFluent.EntityFrameworkCore.DataEncryption;
 
 /// <summary>
 /// Provides a mechanism to encrypt and decrypt data.

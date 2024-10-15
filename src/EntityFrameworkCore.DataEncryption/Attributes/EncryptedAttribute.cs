@@ -1,4 +1,6 @@
-﻿namespace System.ComponentModel.DataAnnotations;
+﻿using System;
+
+namespace SoftFluent.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Specifies that the data field value should be encrypted.

@@ -1,8 +1,9 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data.Common;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption.Test.Context;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption.Test.Context;
 
 /// <summary>
 /// Database context factory used to create entity framework new <see cref="DbContext"/>.

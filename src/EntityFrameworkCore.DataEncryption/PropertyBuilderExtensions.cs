@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.DataEncryption.Internal;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Internal;
 using System;
-using System.ComponentModel.DataAnnotations;
+using SoftFluent.ComponentModel.DataAnnotations;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption;
 
 /// <summary>
 /// Provides extensions for the <see cref="PropertyBuilder"/> type.

@@ -1,7 +1,7 @@
-﻿namespace Microsoft.EntityFrameworkCore.DataEncryption.Internal;
+﻿namespace SoftFluent.EntityFrameworkCore.DataEncryption.Internal;
 
 internal class PropertyAnnotations
 {
-    public const string IsEncrypted = "Microsoft.EntityFrameworkCore.DataEncryption.IsEncrypted";
-    public const string StorageFormat = "Microsoft.EntityFrameworkCore.DataEncryption.StorageFormat";
+    public const string IsEncrypted = "SoftFluent.EntityFrameworkCore.DataEncryption.IsEncrypted";
+    public const string StorageFormat = "SoftFluent.EntityFrameworkCore.DataEncryption.StorageFormat";
 }

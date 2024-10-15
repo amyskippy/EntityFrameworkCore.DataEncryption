@@ -1,16 +1,17 @@
 ﻿using Bogus;
-using Microsoft.EntityFrameworkCore.DataEncryption;
-using Microsoft.EntityFrameworkCore.DataEncryption.Internal;
-using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
-using Microsoft.EntityFrameworkCore.DataEncryption.Test.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using SoftFluent.ComponentModel.DataAnnotations;
+using SoftFluent.EntityFrameworkCore.DataEncryption;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Internal;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Providers;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Test.Context;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Xunit;
 
-namespace Microsoft.EntityFrameworkCore.Encryption.Test;
+namespace SoftFluent.EntityFrameworkCore.Encryption.Test;
 
 public class PropertyBuilderExtensionsTest
 {

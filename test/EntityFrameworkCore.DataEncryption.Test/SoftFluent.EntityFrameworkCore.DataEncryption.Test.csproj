@@ -4,12 +4,12 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<LangVersion>10</LangVersion>
 		<IsPackable>false</IsPackable>
-		<AssemblyName>Microsoft.EntityFrameworkCore.Encryption.Test</AssemblyName>
-		<RootNamespace>Microsoft.EntityFrameworkCore.Encryption.Test</RootNamespace>
+		<AssemblyName>SoftFluent.EntityFrameworkCore.Encryption.Test</AssemblyName>
+		<RootNamespace>SoftFluent.EntityFrameworkCore.Encryption.Test</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\EntityFrameworkCore.DataEncryption\EntityFrameworkCore.DataEncryption.csproj" />
+		<ProjectReference Include="..\..\src\EntityFrameworkCore.DataEncryption\SoftFluent.EntityFrameworkCore.DataEncryption.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

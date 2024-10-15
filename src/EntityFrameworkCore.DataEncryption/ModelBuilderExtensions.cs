@@ -1,15 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore.DataEncryption.Internal;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using SoftFluent.EntityFrameworkCore.DataEncryption.Internal;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using SoftFluent.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption;
 
 /// <summary>
 /// Provides extensions for the <see cref="ModelBuilder"/>.

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using SoftFluent.ComponentModel.DataAnnotations;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AesSample;
+namespace SoftFluent.AesSample;
 
 public class UserEntity
 {

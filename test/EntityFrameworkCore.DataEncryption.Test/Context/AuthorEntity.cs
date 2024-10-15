@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SoftFluent.ComponentModel.DataAnnotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption.Test.Context;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption.Test.Context;
 
 public sealed class AuthorEntity
 {

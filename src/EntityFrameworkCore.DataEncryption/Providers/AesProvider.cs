@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Microsoft.EntityFrameworkCore.DataEncryption.Providers;
+namespace SoftFluent.EntityFrameworkCore.DataEncryption.Providers;
 
 /// <summary>
 /// Implements the Advanced Encryption Standard (AES) symmetric algorithm.

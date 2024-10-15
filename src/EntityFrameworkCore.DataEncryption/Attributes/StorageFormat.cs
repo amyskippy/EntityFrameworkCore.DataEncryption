@@ -1,4 +1,4 @@
-﻿namespace System.ComponentModel.DataAnnotations;
+﻿namespace SoftFluent.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Represents the storage format for an encrypted value.
