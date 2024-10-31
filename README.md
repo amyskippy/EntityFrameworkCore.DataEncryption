@@ -8,7 +8,7 @@
 
 ## Disclaimer
 
-<h4 align="center">:warning: This project is **not** affiliated with Microsoft. :warning:</h4><br>
+<h4 align="center">This project is maintained by SoftFluent</h4><br>
 
 This library has been developed initialy for a personal project of mine which suits my use case. It provides a simple way to encrypt column data.
 
