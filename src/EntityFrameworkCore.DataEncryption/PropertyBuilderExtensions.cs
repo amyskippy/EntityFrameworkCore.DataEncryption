@@ -10,7 +10,17 @@ namespace SoftFluent.EntityFrameworkCore.DataEncryption;
 /// </summary>
 public static class PropertyBuilderExtensions
 {
-    public static PropertyBuilder<TProperty> IsEncrypted<TProperty>(this PropertyBuilder<TProperty> builder, StorageFormat storageFormat = StorageFormat.Default)
+    /// <summary>
+    /// Identifies that this property is encrypted using the <see cref="SoftFluent.EntityFrameworkCore.DataEncryption"/>
+    /// package.
+    /// </summary>
+    /// <typeparam name="TProperty">The type of the property being configured.</typeparam>
+    /// <param name="builder">The <see cref="PropertyBuilder{TProperty}"/> to configure.</param>
+    /// <param name="storageFormat">The storage format to use for the encrypted value.
+    /// See <see cref="StorageFormat"/>, Defaults to <see cref="StorageFormat.Default"/>.</param>
+    /// <exception cref="ArgumentNullException">Thrown if the <paramref name="builder"/> is null.</exception>
+    public static PropertyBuilder<TProperty> IsEncrypted<TProperty>(this PropertyBuilder<TProperty> builder,
+        StorageFormat storageFormat = StorageFormat.Default)
     {
         if (builder is null)
         {
