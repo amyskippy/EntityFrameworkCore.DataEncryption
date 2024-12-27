@@ -15,7 +15,7 @@ public class ModelBuilderExtensionsTest
     [Fact]
     public void ModelBuilderShouldNeverBeNullTest()
     {
-        Assert.Throws<ArgumentNullException>(() => ModelBuilderExtensions.UseEncryption(null, null));
+        Assert.Throws<ArgumentNullException>(() => ModelBuilderExtensions.UseEncryption(null, null as IEncryptionProvider));
     }
 
     [Fact]
