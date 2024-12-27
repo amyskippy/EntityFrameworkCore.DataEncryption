@@ -26,6 +26,21 @@ internal sealed class EncryptionConverter<TModel, TProvider> : ValueConverter<TM
     {
     }
 
+    /// <summary>
+    /// Creates a new <see cref="EncryptionConverter{TModel,TProvider}"/> instance where the
+    /// <see cref="IEncryptionProvider"/> is provided at runtime via a Func.
+    /// </summary>
+    /// <param name="encryptionProviderFunc">Func to resolve the Encryption provider that will be used.</param>
+    /// <param name="storageFormat">Encryption storage format.</param>
+    /// <param name="mappingHints">Mapping hints.</param>
+    public EncryptionConverter(Func<IEncryptionProvider> encryptionProviderFunc, StorageFormat storageFormat, ConverterMappingHints mappingHints = null)
+        : base(
+            x => Encrypt<TModel, TProvider>(x, encryptionProviderFunc, storageFormat),
+            x => Decrypt<TModel, TProvider>(x, encryptionProviderFunc, storageFormat),
+            mappingHints)
+    {
+    }
+
     private static TOutput Encrypt<TInput, TOutput>(TInput input, IEncryptionProvider encryptionProvider, StorageFormat storageFormat)
     {
         byte[] inputData = input switch
@@ -51,7 +66,12 @@ internal sealed class EncryptionConverter<TModel, TProvider> : ValueConverter<TM
         return (TOutput)Convert.ChangeType(encryptedData, typeof(TOutput));
     }
 
-    private static TModel Decrypt<TInput, TOupout>(TProvider input, IEncryptionProvider encryptionProvider, StorageFormat storageFormat)
+    private static TOutput Encrypt<TInput, TOutput>(TInput input, Func<IEncryptionProvider> encryptionProviderFunc, StorageFormat storageFormat)
+    {
+        return Encrypt<TInput, TOutput>(input, encryptionProviderFunc(), storageFormat);
+    }
+
+    private static TModel Decrypt<TInput, TOutput>(TProvider input, IEncryptionProvider encryptionProvider, StorageFormat storageFormat)
     {
         Type destinationType = typeof(TModel);
         byte[] inputData = storageFormat switch
@@ -72,5 +92,10 @@ internal sealed class EncryptionConverter<TModel, TProvider> : ValueConverter<TM
         }
 
         return (TModel)Convert.ChangeType(decryptedData, typeof(TModel));
+    }
+
+    private static TModel Decrypt<TInput, TOutput>(TProvider input, Func<IEncryptionProvider> encryptionProviderFunc, StorageFormat storageFormat)
+    {
+        return Decrypt<TInput, TOutput>(input, encryptionProviderFunc(), storageFormat);
     }
 }
