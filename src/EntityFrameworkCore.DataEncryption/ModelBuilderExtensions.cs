@@ -90,6 +90,93 @@ public static class ModelBuilderExtensions
         throw new NotImplementedException($"Type {propertyType.Name} does not support encryption.");
     }
 
+    /// <summary>
+    /// Enables encryption on this model using a function that provides an encryption provider.
+    /// This is useful to provide an encryption provider from your dependency injection service collection,
+    /// allowing encryption providers to have access to the current request state, or other dependencies.
+    /// </summary>
+    /// <param name="modelBuilder">
+    /// The <see cref="ModelBuilder"/> instance.
+    /// </param>
+    /// <param name="encryptionProviderFunc">
+    /// A function that returns an <see cref="IEncryptionProvider"/> to use for encryption.
+    /// </param>
+    /// <returns>
+    /// The updated <paramref name="modelBuilder"/>.
+    /// </returns>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if <paramref name="modelBuilder"/> or <paramref name="encryptionProviderFunc"/> is null.
+    /// </exception>
+    public static ModelBuilder UseEncryption(this ModelBuilder modelBuilder, Func<IEncryptionProvider> encryptionProviderFunc)
+    {
+        if (modelBuilder is null)
+        {
+            throw new ArgumentNullException(nameof(modelBuilder));
+        }
+
+        if (encryptionProviderFunc == null)
+        {
+            throw new ArgumentNullException(nameof(encryptionProviderFunc));
+        }
+
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            var encryptedProperties = GetEntityEncryptedProperties(entityType);
+
+            foreach (var encryptedProperty in encryptedProperties)
+            {
+                if (encryptedProperty.Property == null)
+                {
+                    // Skip invalid properties
+                    continue;
+                }
+
+#pragma warning disable EF1001 // Internal EF Core API usage.
+                if (encryptedProperty.Property.FindAnnotation(CoreAnnotationNames.ValueConverter) is not null)
+                {
+                    // Skip properties that already have a converter
+                    continue;
+                }
+#pragma warning restore EF1001 // Internal EF Core API usage.
+
+                // Create and assign the value converter
+                var converter = GetValueConverter(encryptedProperty.Property.ClrType, encryptionProviderFunc, encryptedProperty.StorageFormat);
+
+                if (converter != null)
+                {
+                    encryptedProperty.Property.SetValueConverter(converter);
+                }
+            }
+        }
+
+        return modelBuilder;
+    }
+
+    private static ValueConverter GetValueConverter(Type propertyType, Func<IEncryptionProvider> encryptionProviderFunc, StorageFormat storageFormat)
+    {
+        if (propertyType == typeof(string))
+        {
+            return storageFormat switch
+            {
+                StorageFormat.Default or StorageFormat.Base64 => new EncryptionConverter<string, string>(encryptionProviderFunc, StorageFormat.Base64),
+                StorageFormat.Binary => new EncryptionConverter<string, byte[]>(encryptionProviderFunc, StorageFormat.Binary),
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        if (propertyType == typeof(byte[]))
+        {
+            return storageFormat switch
+            {
+                StorageFormat.Default or StorageFormat.Binary => new EncryptionConverter<byte[], byte[]>(encryptionProviderFunc, StorageFormat.Binary),
+                StorageFormat.Base64 => new EncryptionConverter<byte[], string>(encryptionProviderFunc, StorageFormat.Base64),
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        throw new NotImplementedException($"Type {propertyType.Name} does not support encryption.");
+    }
+
     private static IEnumerable<EncryptedProperty> GetEntityEncryptedProperties(IMutableEntityType entity)
     {
         return entity.GetProperties()
